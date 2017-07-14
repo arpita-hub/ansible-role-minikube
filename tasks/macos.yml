@@ -10,4 +10,4 @@
     dest: "{{ minikube_install_dir }}/docker-machine-driver-xhyve"
     owner: root
     group: wheel
-    mode: 0755
+    mode: "4755"
