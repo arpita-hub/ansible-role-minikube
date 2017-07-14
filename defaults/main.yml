@@ -1,0 +1,13 @@
+---
+
+minikube_dependencies:
+  - qemu
+  - firewalld
+  - libvirt
+  - dnsmasq
+
+minikube_install_dir: /usr/local/bin
+minikube_version: latest
+kubectl_version: v1.7.0
+docker_machine_version: v0.12.2
+docker_machine_kvm_driver_version: v0.10.0

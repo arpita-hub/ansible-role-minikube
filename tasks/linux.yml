@@ -1,0 +1,36 @@
+---
+
+- name: install the required packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ minikube_dependencies }}"
+
+- name: start services
+  service:
+    name: "{{ item }}"
+    state: restarted
+    enabled: yes
+  with_items:
+    - firewalld
+    - libvirtd
+
+- name: enable autostart for the default network
+  virt_net:
+    autostart: yes
+    name: default
+
+- name: start the default network
+  virt_net:
+    name: default
+    state: active
+
+- name: get kvm driver
+  get_url:
+    url: "https://github.com/dhiltgen/docker-machine-kvm/releases/download/{{ docker_machine_kvm_driver_version }}/docker-machine-driver-kvm-ubuntu16.04"
+    dest: "{{ minikube_install_dir }}/docker-machine-driver-kvm"
+
+- name: chmod kvm driver
+  file:
+    dest: "{{ minikube_install_dir }}/docker-machine-driver-kvm"
+    mode: 0755
