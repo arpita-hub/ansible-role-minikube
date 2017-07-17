@@ -1,5 +1,5 @@
-Role Name
-=========
+minikube
+========
 
 This role sets up a minikube instance. Works with both Linux and macOS hosts.
 
