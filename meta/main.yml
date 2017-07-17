@@ -24,7 +24,7 @@ galaxy_info:
       - all
   - name: MacOSX
     versions:
-      - 10.10
+      - all
 
   galaxy_tags:
     - minikube
