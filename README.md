@@ -3,17 +3,14 @@ minikube
 
 This role sets up a minikube instance. Works with both Linux and macOS hosts.
 
-Requirements
-------------
-
-This uses the [virt\_net](http://docs.ansible.com/ansible/virt_net_module.html) module, as such you need to install both `lxml` and `libvirt-python` on your controller, either via pip or via your package manager.
-
 Role Variables
 --------------
 
   * **minikube\_dependencies** is a list of packages to install.
 
-The requirements for Minikube are: *qemu*, *firewalld*, *libvirt* and *dnsmasq*.
+Ansible's [virt\_net](http://docs.ansible.com/ansible/virt_net_module.html) module requires `lxml` and `libvirt-python`.
+
+Minikube requires `qemu`, `firewalld`, `libvirt` and `dnsmasq`.
 
 The actual packages are distribution dependent. They are installed by using the [package](http://docs.ansible.com/ansible/package_module.html) module from Ansible.
 
