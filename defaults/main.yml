@@ -1,9 +1,11 @@
 ---
 
 minikube_dependencies:
-  - qemu
+  - python-lxml
+  - python-libvirt
+  - qemu-kvm
   - firewalld
-  - libvirt
+  - libvirt-daemon-system
   - dnsmasq
 
 minikube_install_dir: /usr/local/bin
