@@ -25,12 +25,12 @@
     name: default
     state: active
 
-- name: get kvm driver
+- name: get kvm2 driver
   get_url:
-    url: "https://github.com/dhiltgen/docker-machine-kvm/releases/download/{{ docker_machine_kvm_driver_version }}/docker-machine-driver-kvm-ubuntu16.04"
-    dest: "{{ minikube_install_dir }}/docker-machine-driver-kvm"
+    url: "https://github.com/kubernetes/minikube/releases/download/{{ minikube_version }}/docker-machine-driver-kvm2"
+    dest: "{{ minikube_install_dir }}/docker-machine-driver-kvm2"
 
 - name: chmod kvm driver
   file:
-    dest: "{{ minikube_install_dir }}/docker-machine-driver-kvm"
+    dest: "{{ minikube_install_dir }}/docker-machine-driver-kvm2"
     mode: 0755
